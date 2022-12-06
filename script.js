@@ -12,8 +12,10 @@ var timerInterval;
 header.textContent = "Mini Quiz";
 // Style the appended h1
 header.setAttribute("style", "display:flex; font-size: 60px; font-weight: bold; text-decoration: underLine;");
+
 // append it to the doc.body
 headerEl.append(header);
+
 // questions for the quiz
 var questions = [{
     question: "What does var stand for?",
@@ -71,6 +73,7 @@ function nextquestion(){
         displayQuestions()
     } else {
         // hide the questions
+               // displayQuestions().classList.add('hide')
         // displayQuestions() = hide
         // stop the timer, done
         clearInterval(timerInterval)
@@ -143,7 +146,6 @@ function saveScore(event) {
     scoreEl.textContent = "high score" +JSON.stringify(scoreArrey)
 
     for (var i=0; i < scoreArrey.length; i++) {
-        var scorelist.textContent = scoreArrey[i].initials
         formEl.append(scorelist);
         console.log(scorelist)
     }
